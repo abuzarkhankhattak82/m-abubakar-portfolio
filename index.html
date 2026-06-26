@@ -14,6 +14,16 @@
 </head>
 <body>
 
+    <!-- ===== FLOATING ICONS (background) ===== -->
+    <div class="floating-icons">
+        <i class="fas fa-pills"></i>
+        <i class="fas fa-heartbeat"></i>
+        <i class="fas fa-stethoscope"></i>
+        <i class="fas fa-hospital"></i>
+        <i class="fas fa-user-md"></i>
+        <i class="fas fa-syringe"></i>
+    </div>
+
     <!-- ===== NAVIGATION ===== -->
     <nav id="navbar">
         <div class="container">
@@ -34,15 +44,16 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <div class="badge">
+                <div class="badge pulse-badge">
                     <i class="fas fa-user-md"></i> Dispenser &amp; Pharmacy Tech
                 </div>
                 <h1>
                     Muhammad <br /><span class="highlight">Abubakar</span>
                 </h1>
-                <p class="subtitle">Dispenser Technician &bull; Pharmacy Technician</p>
+                <!-- TYPING EFFECT -->
+                <p class="subtitle" id="typing-text"></p>
                 <div class="tagline">
-                    <span><i class="fas fa-certificate"></i> 4+ Certifications</span>
+                    <span><i class="fas fa-certificate"></i> <span class="counter" data-count="4">0</span>+ Certifications</span>
                     <span><i class="fas fa-hospital"></i> Aleena Institute of Medical Sciences</span>
                     <span><i class="fas fa-shield-alt"></i> Punjab Emergency Service</span>
                 </div>
@@ -56,7 +67,7 @@
                 </div>
             </div>
 
-            <div class="hero-3d">
+            <div class="hero-3d" id="three-container">
                 <canvas id="three-canvas"></canvas>
                 <div class="hero-3d-badge">
                     <i class="fas fa-cube"></i> 3D Medical Cross
@@ -72,7 +83,6 @@
                 <!-- Avatar -->
                 <div class="about-avatar reveal">
                     <div class="avatar-frame">
-                        <!-- ✅ PROFILE PICTURE – apni image yahan rakhein -->
                         <img src="images/profile.jpg" alt="Muhammad Abubakar" />
                     </div>
                     <div class="name-title">
@@ -135,7 +145,6 @@
                     <h4>Community Action For Disaster Response</h4>
                     <div class="issuer"><i class="fas fa-building"></i> Punjab Emergency Service</div>
                     <div class="cert-img-wrapper">
-                        <!-- ✅ CERTIFICATE 1 – apni image yahan rakhein -->
                         <img src="images/cert1.jpg" alt="Community Action For Disaster Response" />
                     </div>
                     <span class="cert-badge"><i class="fas fa-check-circle"></i> Verified</span>
@@ -147,7 +156,6 @@
                     <h4>Basic Community Safety Online Training</h4>
                     <div class="issuer"><i class="fas fa-building"></i> Punjab Emergency Service</div>
                     <div class="cert-img-wrapper">
-                        <!-- ✅ CERTIFICATE 2 – apni image yahan rakhein -->
                         <img src="images/cert2.jpg" alt="Basic Community Safety Online Training" />
                     </div>
                     <span class="cert-badge"><i class="fas fa-check-circle"></i> Verified</span>
@@ -159,7 +167,6 @@
                     <h4>Certificate of Achievement</h4>
                     <div class="issuer"><i class="fas fa-building"></i> Aleena College</div>
                     <div class="cert-img-wrapper">
-                        <!-- ✅ CERTIFICATE 3 – apni image yahan rakhein -->
                         <img src="images/cert3.jpg" alt="Certificate of Achievement" />
                     </div>
                     <span class="cert-badge"><i class="fas fa-check-circle"></i> Verified</span>
@@ -171,7 +178,6 @@
                     <h4>Pharmacy Technician Diploma</h4>
                     <div class="issuer"><i class="fas fa-building"></i> Aleena Institute of Medical Sciences</div>
                     <div class="cert-img-wrapper">
-                        <!-- ✅ CERTIFICATE 4 – apni image yahan rakhein -->
                         <img src="images/cert4.jpg" alt="Pharmacy Technician Diploma" />
                     </div>
                     <span class="cert-badge"><i class="fas fa-check-circle"></i> Verified</span>
@@ -238,7 +244,7 @@
                         <i class="fas fa-envelope"></i> abubakar@example.com
                     </a>
                     <a href="#">
-                        <i class="fas fa-phone"></i> +92 317 6519330
+                        <i class="fas fa-phone"></i> +92 300 1234567
                     </a>
                     <a href="#">
                         <i class="fab fa-linkedin"></i> linkedin.com/in/m-abubakar
