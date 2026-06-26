@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Abubakar · Portfolio</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-logo">M<span>.</span>Abubakar</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">Profile</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">
+                    <i class="fas fa-user-md"></i> Dispenser &amp; Pharmacy Tech
+                </div>
+                <h1>
+                    Muhammad <br /><span class="highlight">Abubakar</span>
+                </h1>
+                <p class="subtitle">Dispenser Technician &bull; Pharmacy Technician</p>
+                <div class="tagline">
+                    <span><i class="fas fa-certificate"></i> 4+ Certifications</span>
+                    <span><i class="fas fa-hospital"></i> Aleena Institute of Medical Sciences</span>
+                    <span><i class="fas fa-shield-alt"></i> Punjab Emergency Service</span>
+                </div>
+                <div class="hero-btns">
+                    <a href="#certificates" class="btn btn-primary">
+                        <i class="fas fa-award"></i> View Certificates
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-3d">
+                <canvas id="three-canvas"></canvas>
+                <div class="hero-3d-badge">
+                    <i class="fas fa-cube"></i> 3D Medical Cross
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT / PROFILE -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Avatar -->
+                <div class="about-avatar reveal">
+                    <div class="avatar-frame">
+                        <!-- Replace with actual profile picture -->
+                        <img
+                        src="https://ui-avatars.com/api/?name=Muhammad+Abubakar&background=1a4a6f&color=3ecf8e&size=300&bold=true"
+                        alt="Muhammad Abubakar"
+                        />
+                    </div>
+                    <div class="name-title">
+                        <h3>Muhammad Abubakar</h3>
+                        <p>Dispenser &amp; Pharmacy Technician</p>
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="about-text reveal">
+                    <h2>About <span>Profile</span></h2>
+                    <p class="sub">
+                        Dedicated healthcare professional with expertise in
+                        pharmaceutical dispensing and community safety.
+                    </p>
+                    <p>
+                        Muhammad Abubakar is a certified Dispenser Technician and
+                        Pharmacy Technician from Aleena Institute of Medical Sciences.
+                        He has completed advanced training in disaster response and
+                        community safety through Punjab Emergency Service, and holds
+                        a Certificate of Achievement from Aleena College.
+                    </p>
+
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <span><strong>Full Name</strong><br />Muhammad Abubakar</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span><strong>Institute</strong><br />Aleena Institute of Medical Sciences</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span><strong>Profession</strong><br />Dispenser Technician</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-pills"></i>
+                            <span><strong>Specialization</strong><br />Pharmacy Technician</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section class="certificates" id="certificates">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="badge"><i class="fas fa-award"></i> Credentials</div>
+                <h2>Educational <span>Certificates</span></h2>
+                <p>Four verified certifications that showcase his expertise and dedication.</p>
+            </div>
+
+            <div class="cert-grid stagger">
+                <!-- 1 -->
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h4>Community Action For Disaster Response</h4>
+                    <div class="issuer"><i class="fas fa-building"></i> Punjab Emergency Service</div>
+                    <div class="cert-img-wrapper">
+                        <!-- Replace with actual certificate image -->
+                        <img
+                        src="https://placehold.co/400x300/0b2b4a/3ecf8e?text=Certificate+%231"
+                        alt="Community Action For Disaster Response"
+                        />
+                    </div>
+                    <span class="cert-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                </div>
+
+                <!-- 2 -->
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-shield-virus"></i></div>
+                    <h4>Basic Community Safety Online Training</h4>
+                    <div class="issuer"><i class="fas fa-building"></i> Punjab Emergency Service</div>
+                    <div class="cert-img-wrapper">
+                        <img
+                        src="https://placehold.co/400x300/0b2b4a/3ecf8e?text=Certificate+%232"
+                        alt="Basic Community Safety Online Training"
+                        />
+                    </div>
+                    <span class="cert-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                </div>
+
+                <!-- 3 -->
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-trophy"></i></div>
+                    <h4>Certificate of Achievement</h4>
+                    <div class="issuer"><i class="fas fa-building"></i> Aleena College</div>
+                    <div class="cert-img-wrapper">
+                        <img
+                        src="https://placehold.co/400x300/0b2b4a/3ecf8e?text=Certificate+%233"
+                        alt="Certificate of Achievement"
+                        />
+                    </div>
+                    <span class="cert-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                </div>
+
+                <!-- 4 -->
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h4>Pharmacy Technician Diploma</h4>
+                    <div class="issuer"><i class="fas fa-building"></i> Aleena Institute of Medical Sciences</div>
+                    <div class="cert-img-wrapper">
+                        <img
+                        src="https://placehold.co/400x300/0b2b4a/3ecf8e?text=Certificate+%234"
+                        alt="Pharmacy Technician Diploma"
+                        />
+                    </div>
+                    <span class="cert-badge"><i class="fas fa-check-circle"></i> Verified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="badge"><i class="fas fa-bolt"></i> Expertise</div>
+                <h2>Core <span>Skills</span></h2>
+                <p>Professional competencies developed through education and hands-on experience.</p>
+            </div>
+
+            <div class="skills-grid stagger">
+                <div class="skill-item">
+                    <i class="fas fa-prescription-bottle"></i>
+                    <h5>Dispensing</h5>
+                    <p>Accurate medication dispensing &amp; patient counseling</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-pills"></i>
+                    <h5>Pharmacy</h5>
+                    <p>Pharmaceutical calculations &amp; drug interactions</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-heartbeat"></i>
+                    <h5>Emergency Response</h5>
+                    <p>Disaster action &amp; community first aid</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h5>Safety Training</h5>
+                    <p>Community safety protocols &amp; risk assessment</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-file-medical-alt"></i>
+                    <h5>Health Records</h5>
+                    <p>Patient documentation &amp; record keeping</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-comment-medical"></i>
+                    <h5>Patient Care</h5>
+                    <p>Empathetic communication &amp; care coordination</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="reveal">
+                <h2>Let's <span>Connect</span></h2>
+                <p>
+                    Have a question or want to collaborate? Reach out through any of
+                    the channels below.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:abubakar@example.com">
+                        <i class="fas fa-envelope"></i> abubakar@example.com
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-phone"></i> +92 300 1234567
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-linkedin"></i> linkedin.com/in/m-abubakar
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-github"></i> github.com/m-abubakar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            &copy; 2026 <span>Muhammad Abubakar</span> &bull; Built with <i class="fas fa-heart" style="color:var(--accent);"></i>
+        </div>
+    </footer>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Main Script -->
+    <script src="js/script.js"></script>
+</body>
+</html>
