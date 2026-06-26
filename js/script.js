@@ -1,4 +1,4 @@
-// 3D SCENE – Medical Cross with glowing particles
+/* ===== 3D SCENE – Medical Cross ===== */
 (function init3D() {
     const canvas = document.getElementById('three-canvas');
     if (!canvas) return;
@@ -163,8 +163,7 @@
     }
 })();
 
-
-// DOM Interactions
+/* ===== DOM INTERACTIONS ===== */
 document.addEventListener('DOMContentLoaded', () => {
     // Hamburger
     const hamburger = document.getElementById('hamburger');
@@ -212,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Smooth anchor scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 e.preventDefault();
