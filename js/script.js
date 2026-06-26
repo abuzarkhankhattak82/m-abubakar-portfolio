@@ -1,9 +1,10 @@
-/* ===== 3D SCENE – Medical Cross ===== */
+/* ===== 3D SCENE – Medical Cross with Mouse Parallax ===== */
 (function init3D() {
     const canvas = document.getElementById('three-canvas');
     if (!canvas) return;
+    const container = document.getElementById('three-container');
 
-    const width = canvas.parentElement.clientWidth || 460;
+    const width = container.clientWidth || 460;
     const size = Math.min(width, 460);
 
     const scene = new THREE.Scene();
@@ -120,8 +121,17 @@
 
         const t = clock.getElapsedTime();
 
+        // Auto-rotation
         group.rotation.x = Math.sin(t * 0.25) * 0.08;
-        group.rotation.y = t * 0.35;
+        group.rotation.y += 0.005; // slow auto-rotate
+
+        // Mouse parallax – subtle offset
+        if (window._mouseX !== undefined) {
+            const targetRotY = window._mouseX * 0.2;
+            const targetRotX = window._mouseY * 0.1;
+            group.rotation.y += (targetRotY - group.rotation.y) * 0.01;
+            group.rotation.x += (targetRotX - group.rotation.x) * 0.01;
+        }
 
         const pulse = 1 + 0.06 * Math.sin(t * 1.6);
         sphere.scale.set(pulse, pulse, pulse);
@@ -149,7 +159,7 @@
 
     // Resize
     function resize() {
-        const w = canvas.parentElement.clientWidth || 460;
+        const w = container.clientWidth || 460;
         const s = Math.min(w, 460);
         renderer.setSize(s, s);
         camera.aspect = 1;
@@ -159,13 +169,98 @@
     window.addEventListener('resize', resize);
     if (window.ResizeObserver) {
         const ro = new ResizeObserver(resize);
-        ro.observe(canvas.parentElement);
+        ro.observe(container);
     }
+
+    // Mouse move parallax
+    document.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        window._mouseX = x;
+        window._mouseY = -y;
+    });
 })();
 
-/* ===== DOM INTERACTIONS ===== */
+
+/* ===== TYPING EFFECT ===== */
 document.addEventListener('DOMContentLoaded', () => {
-    // Hamburger
+    const textElement = document.getElementById('typing-text');
+    if (textElement) {
+        const text = 'Dispenser Technician • Pharmacy Technician';
+        let index = 0;
+        let isDeleting = false;
+
+        function type() {
+            if (!isDeleting) {
+                textElement.textContent = text.substring(0, index + 1);
+                index++;
+                if (index === text.length) {
+                    isDeleting = true;
+                    setTimeout(type, 2000);
+                    return;
+                }
+                setTimeout(type, 50);
+            } else {
+                textElement.textContent = text.substring(0, index - 1);
+                index--;
+                if (index === 0) {
+                    isDeleting = false;
+                    setTimeout(type, 500);
+                    return;
+                }
+                setTimeout(type, 30);
+            }
+        }
+
+        type();
+    }
+
+    // ===== COUNTER ANIMATION =====
+    const counters = document.querySelectorAll('.counter');
+    let countersStarted = false;
+
+    function startCounters() {
+        if (countersStarted) return;
+        countersStarted = true;
+
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-count'));
+            const duration = 2000;
+            const stepTime = 20;
+            const steps = duration / stepTime;
+            let current = 0;
+            const increment = target / steps;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target;
+                    return;
+                }
+                counter.textContent = Math.floor(current);
+                requestAnimationFrame(updateCounter);
+            };
+            updateCounter();
+        });
+    }
+
+    // Observe counters section
+    const counterSection = document.querySelector('.tagline');
+    if (counterSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        observer.observe(counterSection);
+    }
+
+
+    // ===== HAMBURGER =====
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
 
@@ -181,7 +276,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll Reveal
+
+    // ===== SCROLL REVEAL =====
     const reveals = document.querySelectorAll('.reveal');
     const stagers = document.querySelectorAll('.stagger');
 
@@ -199,7 +295,8 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(el => observer.observe(el));
     stagers.forEach(el => observer.observe(el));
 
-    // Nav shadow
+
+    // ===== NAV SHADOW =====
     const nav = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 60) {
@@ -209,7 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Smooth anchor scroll
+
+    // ===== SMOOTH ANCHOR SCROLL =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const target = document.querySelector(this.getAttribute('href'));
